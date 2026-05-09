@@ -1,0 +1,181 @@
+/*#contenu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    max-height: 700px;
+    margin: 0 auto;
+}
+.ok{
+    text-align: center;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+}
+.ok img{
+    width: 100%;
+    height: 300px;
+    display: block;
+    border-radius: 5px;
+    
+}
+h3{
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+}
+body{
+    background-image: url("../images/fond.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.go{
+    display: inline-block;
+    background-image: url("../images/fond.png");
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+    border-color: white;
+
+}
+.go:hover{
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+    */
+    /* --- Conteneur principal --- */
+#contenu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* --- Cartes --- */
+.ok {
+    text-align: center;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ok:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Images des cartes --- */
+.ok img {
+    width: 100%;
+    height: auto; /* ✅ On enlève la hauteur fixe */
+    max-height: 300px; /* ✅ Limite pour éviter les images trop grandes */
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+}
+
+/* --- Titres des cartes --- */
+h3 {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* --- Corps du site --- */
+body {
+    background-image: url("../images/fond.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Bouton --- */
+.go {
+    display: inline-block;
+    background-image: url("../images/fond.png");
+    background-size: cover;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: 1px solid white;
+}
+
+.go:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+
+/* --- Responsive Design --- */
+
+/* Tablette */
+@media (max-width: 1024px) {
+    #contenu {
+        grid-template-columns: repeat(2, 1fr); /* ✅ 2 colonnes sur tablette */
+        max-width: 90%;
+    }
+}
+
+/* Téléphone */
+@media (max-width: 768px) {
+    body {
+        background-image: url("../images/kal.png"); /* ✅ Corrigé */
+    }
+
+    #contenu {
+        grid-template-columns: 1fr; /* ✅ Une seule colonne */
+        max-width: 95%;
+    }
+
+    .ok img {
+        max-height: 220px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    .go {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    #contenu {
+        gap: 15px;
+    }
+
+    .ok img {
+        max-height: 180px;
+    }
+
+    h3 {
+        font-size: 13px;
+    }
+
+    .go {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+}
